@@ -16,6 +16,7 @@ namespace Rostok
             {
                 beo.Add(new adatok(sor));
             }
+            Console.WriteLine($"3. feladat: Élelmiszerek száma: {beo.Count}");
         }
     }
 }
