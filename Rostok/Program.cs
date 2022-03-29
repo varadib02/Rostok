@@ -21,6 +21,11 @@ namespace Rostok
             Console.WriteLine($"4. feladat: nem 100g-os egység: {beo.Where(x=>x.egyseg!="100g").Count()}");
 
             Console.WriteLine($"5.feladat: Frissgyümölcsök átlagos rosttartalma: {beo.Where(x => x.egyseg == "100g" && x.kat=="Friss gyümölcsök").Average(x=>x.rost)}g");
+
+            Console.WriteLine($"6.feladat: Kérek egy karakter láncot:");
+            string bekert_adat=Console.ReadLine();
+
+            Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x=>x.kat).Count()}");
         }
     }
 }
