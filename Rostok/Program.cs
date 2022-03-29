@@ -25,6 +25,16 @@ namespace Rostok
             Console.WriteLine($"6.feladat: Kérek egy karakter láncot:");
             string bekert_adat = Console.ReadLine();
 
+            if (true)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("A keresés eredménytelen!");
+            }
+
+
             Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x => x.kat).Count()}");
 
             Console.WriteLine($"8.feladat: Statisztika");
