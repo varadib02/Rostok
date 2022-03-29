@@ -26,6 +26,13 @@ namespace Rostok
             string bekert_adat=Console.ReadLine();
 
             Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x=>x.kat).Count()}");
+
+            Console.WriteLine($"8.feladat: Statisztika");
+            Console.WriteLine($"\tAszalt gyümölcsök - {beo.Where(x=>x.kat== "Aszalt gyümölcsök").Count()}");
+            Console.WriteLine($"\tFriss gyümölcsök - {beo.Where(x=>x.kat== "Friss gyümölcsök").Count()}");
+            Console.WriteLine($"\tGabonák és lisztek - {beo.Where(x=>x.kat== "Gabonák és lisztek").Count()}");
+            Console.WriteLine($"\tZöldségek - {beo.Where(x=>x.kat== "Zöldségek").Count()}");
+            Console.WriteLine($"\tMagvak - {beo.Where(x=>x.kat== "Magvak").Count()}");
         }
     }
 }
