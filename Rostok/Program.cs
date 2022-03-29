@@ -17,6 +17,8 @@ namespace Rostok
                 beo.Add(new adatok(sor));
             }
             Console.WriteLine($"3. feladat: Élelmiszerek száma: {beo.Count}");
+
+            Console.WriteLine($"4. feladat: nem 100g-os egység: {beo.Where(x=>x.egyseg!="100g").Count()}");
         }
     }
 }
