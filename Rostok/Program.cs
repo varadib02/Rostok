@@ -24,6 +24,7 @@ namespace Rostok
 
             Console.WriteLine($"6.feladat: Kérek egy karakter láncot:");
             string bekert_adat = Console.ReadLine();
+            bool igaz=false;
             foreach (var i in beo)
             {
                 for (int j = 0; j < i.megnev.Length; j++)
@@ -33,12 +34,19 @@ namespace Rostok
                         if (i.megnev.ToLower()[k] == bekert_adat.ToLower()[k] && i.megnev.ToLower()[k - 1] == bekert_adat.ToLower()[k - 1])
                         {
                         Console.WriteLine(i.megnev);
+                            igaz = true;
                         }
+                        
                     }
                     
                 }
             }
-                Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x => x.kat).Count()}");
+            if (igaz==false)
+            {
+                Console.WriteLine("A keresés eredménytelen!");
+            }
+
+            Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x => x.kat).Count()}");
 
                 Console.WriteLine($"8.feladat: Statisztika");
                 Console.WriteLine($"\tAszalt gyümölcsök - {beo.Where(x => x.kat == "Aszalt gyümölcsök").Count()}");
