@@ -24,6 +24,10 @@ namespace Rostok
 
             Console.WriteLine($"6.feladat: Kérek egy karakter láncot:");
             string bekert_adat = Console.ReadLine();
+            while (bekert_adat.Length<2)
+            {
+                bekert_adat = Console.ReadLine();
+            }
             bool igaz=false;
             foreach (var i in beo)
             {
