@@ -27,35 +27,36 @@ namespace Rostok
             foreach (var i in beo)
             {
                 for (int j = 0; j < i.megnev.Length; j++)
-                { 
+                {
                     if (i.megnev.ToLower()[j] == bekert_adat.ToLower()[0])
                     {
                         Console.WriteLine(i.megnev);
                     }
                 }
-            
-            Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x => x.kat).Count()}");
-
-            Console.WriteLine($"8.feladat: Statisztika");
-            Console.WriteLine($"\tAszalt gyümölcsök - {beo.Where(x => x.kat == "Aszalt gyümölcsök").Count()}");
-            Console.WriteLine($"\tFriss gyümölcsök - {beo.Where(x => x.kat == "Friss gyümölcsök").Count()}");
-            Console.WriteLine($"\tGabonák és lisztek - {beo.Where(x => x.kat == "Gabonák és lisztek").Count()}");
-            Console.WriteLine($"\tZöldségek - {beo.Where(x => x.kat == "Zöldségek").Count()}");
-            Console.WriteLine($"\tMagvak - {beo.Where(x => x.kat == "Magvak").Count()}");
-
-            Console.WriteLine($"9.feladat: Rostok100g.txt");
-            StreamWriter sw = File.CreateText("Rostok100g.txt");
-            sw.WriteLine("Megnevezés;Kategória;Rost");
-            
-            foreach (var i in beo)
-            {
-                if (i.egyseg== "100g")
-                {
-                    sw.Write($"{i.megnev};{i.kat};{i.rost}");
-                }
             }
+                Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x => x.kat).Count()}");
 
+                Console.WriteLine($"8.feladat: Statisztika");
+                Console.WriteLine($"\tAszalt gyümölcsök - {beo.Where(x => x.kat == "Aszalt gyümölcsök").Count()}");
+                Console.WriteLine($"\tFriss gyümölcsök - {beo.Where(x => x.kat == "Friss gyümölcsök").Count()}");
+                Console.WriteLine($"\tGabonák és lisztek - {beo.Where(x => x.kat == "Gabonák és lisztek").Count()}");
+                Console.WriteLine($"\tZöldségek - {beo.Where(x => x.kat == "Zöldségek").Count()}");
+                Console.WriteLine($"\tMagvak - {beo.Where(x => x.kat == "Magvak").Count()}");
 
+                Console.WriteLine($"9.feladat: Rostok100g.txt");
+                StreamWriter sw = File.CreateText("Rostok100g.txt");
+                sw.WriteLine("Megnevezés;Kategória;Rost");
+
+                foreach (var a in beo)
+                {
+                    if (a.egyseg == "100g")
+                    {
+                        sw.Write($"{a.megnev};{a.kat};{a.rost}");
+                    }
+                }
+                Console.ReadKey();
+
+            
 
         }
     }
