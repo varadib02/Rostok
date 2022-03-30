@@ -37,7 +37,7 @@ namespace Rostok
                     {
                         if (i.megnev.ToLower()[k] == bekert_adat.ToLower()[k] && i.megnev.ToLower()[k - 1] == bekert_adat.ToLower()[k - 1])
                         {
-                        Console.WriteLine(i.megnev);
+                        Console.WriteLine($"{i.megnev} @ {i.kat} @ {i.egyseg} @ {i.rost}");
                             igaz = true;
                         }
                         
