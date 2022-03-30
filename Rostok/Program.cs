@@ -28,16 +28,14 @@ namespace Rostok
             {
                 for (int j = 0; j < i.megnev.Length; j++)
                 {
-                    if (i.megnev.ToLower()[j] == bekert_adat.ToLower()[0])
+                    for (int k = j + 1; k < bekert_adat.Length; k++)
                     {
-                        for (int k = j + 1; k < bekert_adat.Length; k++)
+                        if (i.megnev.ToLower()[k] == bekert_adat.ToLower()[k] && i.megnev.ToLower()[k - 1] == bekert_adat.ToLower()[k - 1])
                         {
-                            if (i.megnev.ToLower()[k] == bekert_adat.ToLower()[k] && i.megnev.ToLower()[k - 1] == bekert_adat.ToLower()[k - 1])
-                            {
-                                Console.WriteLine(i.megnev);
-                            }
+                        Console.WriteLine(i.megnev);
                         }
                     }
+                    
                 }
             }
                 Console.WriteLine($"7.feladat: Kategóriák  száma: {beo.GroupBy(x => x.kat).Count()}");
