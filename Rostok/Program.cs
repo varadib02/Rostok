@@ -64,7 +64,10 @@ namespace Rostok
             sw.Close();
             List<string> szures = new List<string>();
             szures.Add("Megnevezés;Kategória;Rost");
-            beo.Where(x=>x.egyseg=="100g").ToList().ForEach(x=>szures.Add($"{x.megnev};{x.kat};{x.rost}"));
+            beo
+                .Where(x=>x.egyseg=="100g")
+                .ToList()
+                .ForEach(x=>szures.Add($"{x.megnev};{x.kat};{x.rost}"));
             File.WriteAllLines("Rostok100g.txt",szures);
 
             
