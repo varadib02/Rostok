@@ -35,14 +35,18 @@ namespace Rostok
                 {
                     for (int k = j + 1; k < bekert_adat.Length; k++)
                     {
-                        if (i.megnev.ToLower()[k] == bekert_adat.ToLower()[k] && i.megnev.ToLower()[k - 1] == bekert_adat.ToLower()[k - 1])
+                        if (i.megnev.ToLower()[k] == bekert_adat.ToLower()[k] && i.megnev.ToLower()[k-1] == bekert_adat.ToLower()[k - 1])
                         {
-                        Console.WriteLine($"{i.megnev} @ {i.kat} @ {i.egyseg} @ {i.rost}");
+                        
                             igaz = true;
                         }
-                        
+                        else { igaz = false; }
                     }
                     
+                }
+                if (igaz == true)
+                {
+                    Console.WriteLine($"{i.megnev} @ {i.kat} @ {i.egyseg} @ {i.rost}");
                 }
             }
             if (igaz==false)
